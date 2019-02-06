@@ -44,7 +44,17 @@ public class EquipoTest
     public void AgregarTenista()
     {
         Equipo equipo1 = new Equipo();
-        equipo1.agregarTarea("Roger", 1980, true, 79.2);
+        equipo1.agregarTenista("Roger", 1980, true, 79.2);
+    }
+
+    @Test
+    public void DevolverDatos()
+    {
+        Equipo equipo1 = new Equipo();
+        assertEquals("", equipo1.getDatosTenista());
+        equipo1.agregarTenista("Roger", 1980, true, 79.2);
+        assertEquals("Roger, 1980, diestro, 79.2, 1\n", equipo1.getDatosTenista());
     }
 }
+
 

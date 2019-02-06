@@ -22,9 +22,20 @@ public class Equipo
     /**
      *
      */
-    public void agregarTarea(String nombre, int anoNacimiento, boolean diestro, double peso) {
+    public void agregarTenista(String nombre, int anoNacimiento, boolean diestro, double peso) {
         Tenista nuevoTenista = new Tenista(nombre, anoNacimiento, diestro, peso, numeroLicencia);
         tenistas.add(nuevoTenista);
         numeroLicencia ++;
+    }
+
+    /**
+     *
+     */
+    public String getDatosTenista() {
+        String aDevolver = "";
+        for(Tenista tenistaActual : tenistas){
+            aDevolver += tenistaActual.getDatosTenista() + "\n";
+        }
+        return aDevolver;
     }
 }

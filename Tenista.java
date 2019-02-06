@@ -85,7 +85,7 @@ public class Tenista
     /**
      * 
      */
-    public String datosTenista(){
+    public String getDatosTenista(){
         String aDevolver = "" + nombre + ", " + anoNacimiento + ", ";
         if(diestro){
             aDevolver += "diestro";

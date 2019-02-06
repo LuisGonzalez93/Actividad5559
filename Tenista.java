@@ -12,16 +12,18 @@ public class Tenista
     private int anoNacimiento;
     private boolean diestro;
     private double peso;
+    private int numeroLicencia;
 
     /**
      * Constructor for objects of class Tenista
      */
-    public Tenista(String nombre, int anoNacimiento, boolean diestro, double peso)
+    public Tenista(String nombre, int anoNacimiento, boolean diestro, double peso, int numeroLicencia)
     {
         this.nombre = nombre;
         this.anoNacimiento = anoNacimiento;
         this.diestro = diestro;
         this.peso = peso;
+        this.numeroLicencia = numeroLicencia;
     }
     
     /**

@@ -81,4 +81,12 @@ public class Tenista
     public void setPeso(double nuevoPeso){
         peso = nuevoPeso;
     }
+    
+    /**
+     * 
+     */
+    public String datosTenista(){
+        String aDevolver = "" + nombre + ", " + anoNacimiento + ", " + diestro +", " + peso + ", " + numeroLicencia;
+        return aDevolver;
+    }
 }

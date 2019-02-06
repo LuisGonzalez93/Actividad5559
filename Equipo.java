@@ -20,7 +20,7 @@ public class Equipo
     }
 
     /**
-     *
+     * Método 05.
      */
     public void agregarTenista(String nombre, int anoNacimiento, boolean diestro, double peso) {
         Tenista nuevoTenista = new Tenista(nombre, anoNacimiento, diestro, peso, numeroLicencia);
@@ -29,7 +29,7 @@ public class Equipo
     }
 
     /**
-     *
+     * Método 06.
      */
     public String getDatosTenista() {
         String aDevolver = "";
@@ -37,5 +37,37 @@ public class Equipo
             aDevolver += tenistaActual.getDatosTenista() + "\n";
         }
         return aDevolver;
+    }
+    
+    /**
+     * Método 07.
+     */
+    public String getTenistasPorAnoNacimiento() {
+        ArrayList<Tenista> tenistaConAnoNacimiento = new ArrayList<Tenista> ();
+        String textoADevolver = "";
+        for(Tenista tenistaActual : tenistas) {
+            tenistaConAnoNacimiento.add(tenistaActual);
+        }
+        int posicionAMirar = 0;
+        while(posicionAMirar < tenistaConAnoNacimiento.size()) {
+            int posicionMenor = posicionAMirar;
+            int posicionPosibleMenor = posicionAMirar;
+            int valorMaximoDeAno = 9999;
+            while(posicionPosibleMenor < tenistaConAnoNacimiento.size()) {
+                if (tenistaConAnoNacimiento.get(posicionPosibleMenor).getAnoNacimiento() < valorMaximoDeAno) {
+                    posicionMenor = posicionPosibleMenor;
+                    valorMaximoDeAno = tenistaConAnoNacimiento.get(posicionPosibleMenor).getAnoNacimiento();
+                }
+                posicionPosibleMenor ++;
+            }
+            Tenista tenistaTemporal = tenistaConAnoNacimiento.get(posicionAMirar);
+            tenistaConAnoNacimiento.set(posicionAMirar, tenistaConAnoNacimiento.get(posicionMenor));
+            tenistaConAnoNacimiento.set(posicionMenor, tenistaTemporal);
+            posicionAMirar ++;
+        }
+        for(Tenista tenistaTemporal : tenistaConAnoNacimiento){
+            textoADevolver += tenistaTemporal.getDatosTenista() + "\n";
+        }
+        return textoADevolver;
     }
 }

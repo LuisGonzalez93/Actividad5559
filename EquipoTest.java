@@ -41,20 +41,32 @@ public class EquipoTest
     }
 
     @Test
-    public void AgregarTenista()
+    public void testGetAgregarTenista()
     {
         Equipo equipo1 = new Equipo();
         equipo1.agregarTenista("Roger", 1980, true, 79.2);
     }
 
     @Test
-    public void DevolverDatos()
+    public void tesGetDevolverDatos()
     {
         Equipo equipo1 = new Equipo();
         assertEquals("", equipo1.getDatosTenista());
         equipo1.agregarTenista("Roger", 1980, true, 79.2);
         assertEquals("Roger, 1980, diestro, 79.2, 1\n", equipo1.getDatosTenista());
     }
+
+    @Test
+    public void testOrdenarPorAnoNacimiento()
+    {
+        Equipo equipo1 = new Equipo();
+        assertEquals("", equipo1.getTenistasPorAnoNacimiento());
+        equipo1.agregarTenista("Roger", 1980, true, 79.2);
+        equipo1.agregarTenista("Rafa", 1982, false, 82.5);
+        equipo1.agregarTenista("Nole", 1985, true, 79);
+        assertEquals("Roger, 1980, diestro, 79.2, 1\nRafa, 1982, zurdo, 82.5, 2\nNole, 1985, diestro, 79.0, 3\n", equipo1.getTenistasPorAnoNacimiento());
+    }
 }
+
 
 

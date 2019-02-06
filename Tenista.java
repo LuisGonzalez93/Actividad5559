@@ -23,4 +23,60 @@ public class Tenista
         this.diestro = diestro;
         this.peso = peso;
     }
+    
+    /**
+     * 
+     */
+    public String getNombre(){
+        return nombre;
+    }
+    
+    /**
+     * 
+     */
+    public void setNombre(String nuevoNombre){
+        nombre = nuevoNombre;
+    }
+    
+    /**
+     * 
+     */
+    public int getAnoNacimiento(){
+        return anoNacimiento;
+    }
+    
+    /**
+     * 
+     */
+    public void setAnoNacimiento(int nuevoAnoNacimiento){
+        anoNacimiento = nuevoAnoNacimiento;
+    }
+    
+    /**
+     * 
+     */
+    public boolean diestro(){
+        return diestro;
+    }
+    
+    /**
+     * 
+     */
+    public void esDiestro(){
+        diestro = false;
+    }
+    
+    /**
+     * 
+     */
+    public double getPeso(){
+        return peso;
+    }
+    
+    /**
+     * 
+     */
+    public void setPeso(double nuevoPeso){
+        peso = nuevoPeso;
+    }
 }

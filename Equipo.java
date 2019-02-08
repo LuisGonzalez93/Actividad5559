@@ -86,11 +86,11 @@ public class Equipo
         while(posicionAMirar < tenistaConPeso.size()) {
             int posicionMenor = posicionAMirar;
             int posicionPosibleMenor = posicionAMirar;
-            double valorMaximoDeAno = 9999;
+            double valorMaximoDePeso = 9999;
             while(posicionPosibleMenor < tenistaConPeso.size()) {
-                if (tenistaConPeso.get(posicionPosibleMenor).getAnoNacimiento() < valorMaximoDeAno) {
+                if (tenistaConPeso.get(posicionPosibleMenor).getPeso() < valorMaximoDePeso) {
                     posicionMenor = posicionPosibleMenor;
-                    valorMaximoDeAno = tenistaConPeso.get(posicionPosibleMenor).getAnoNacimiento();
+                    valorMaximoDePeso = tenistaConPeso.get(posicionPosibleMenor).getPeso();
                 }
                 posicionPosibleMenor ++;
             }

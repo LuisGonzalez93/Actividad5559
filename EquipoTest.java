@@ -66,7 +66,19 @@ public class EquipoTest
         equipo1.agregarTenista("Nole", 1985, true, 79);
         assertEquals("Roger, 1980, diestro, 79.2, 1\nRafa, 1982, zurdo, 82.5, 2\nNole, 1985, diestro, 79.0, 3\n", equipo1.getTenistasPorAnoNacimiento());
     }
+
+    @Test
+    public void testOrdenarPorPeso()
+    {
+        Equipo equipo1 = new Equipo();
+        assertEquals("", equipo1.getTenistasPorPeso());
+        equipo1.agregarTenista("Rafa", 1982, false, 85.3);
+        equipo1.agregarTenista("Roger", 1980, true, 79.2);
+        equipo1.agregarTenista("Nole", 1985, true, 79.6);
+        assertEquals("Roger, 1980, diestro, 79.2, 2\nNole, 1985, diestro, 79.6, 3\n", equipo1.getTenistasPorPeso());
+    }
 }
+
 
 
 

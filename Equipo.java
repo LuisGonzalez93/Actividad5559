@@ -38,7 +38,7 @@ public class Equipo
         }
         return aDevolver;
     }
-    
+
     /**
      * Método 07.
      */
@@ -66,6 +66,40 @@ public class Equipo
             posicionAMirar ++;
         }
         for(Tenista tenistaTemporal : tenistaConAnoNacimiento){
+            textoADevolver += tenistaTemporal.getDatosTenista() + "\n";
+        }
+        return textoADevolver;
+    }
+
+    /**
+     * Método 08.
+     */
+    public String getTenistasPorPeso(){
+        ArrayList<Tenista> tenistaConPeso = new ArrayList<Tenista> ();
+        String textoADevolver = "";
+        for(Tenista tenistaActual : tenistas) {
+            if(tenistaActual.diestro()){
+                tenistaConPeso.add(tenistaActual);
+            }
+        }
+        int posicionAMirar = 0;
+        while(posicionAMirar < tenistaConPeso.size()) {
+            int posicionMenor = posicionAMirar;
+            int posicionPosibleMenor = posicionAMirar;
+            double valorMaximoDeAno = 9999;
+            while(posicionPosibleMenor < tenistaConPeso.size()) {
+                if (tenistaConPeso.get(posicionPosibleMenor).getAnoNacimiento() < valorMaximoDeAno) {
+                    posicionMenor = posicionPosibleMenor;
+                    valorMaximoDeAno = tenistaConPeso.get(posicionPosibleMenor).getAnoNacimiento();
+                }
+                posicionPosibleMenor ++;
+            }
+            Tenista tenistaTemporal = tenistaConPeso.get(posicionAMirar);
+            tenistaConPeso.set(posicionAMirar, tenistaConPeso.get(posicionMenor));
+            tenistaConPeso.set(posicionMenor, tenistaTemporal);
+            posicionAMirar ++;
+        }
+        for(Tenista tenistaTemporal : tenistaConPeso){
             textoADevolver += tenistaTemporal.getDatosTenista() + "\n";
         }
         return textoADevolver;

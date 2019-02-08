@@ -21,6 +21,7 @@ public class Equipo
 
     /**
      * Método 05.
+     * Agrega un nuevo tenista a la colección.
      */
     public void agregarTenista(String nombre, int anoNacimiento, boolean diestro, double peso) {
         Tenista nuevoTenista = new Tenista(nombre, anoNacimiento, diestro, peso, numeroLicencia);
@@ -30,6 +31,7 @@ public class Equipo
 
     /**
      * Método 06.
+     * Devuelve los datos del tenista, cada tenista en una línea.
      */
     public String getDatosTenista() {
         String aDevolver = "";
@@ -41,6 +43,7 @@ public class Equipo
 
     /**
      * Método 07.
+     * Salen ordenados los tenistas por su año de nacimiento.
      */
     public String getTenistasPorAnoNacimiento() {
         ArrayList<Tenista> tenistaConAnoNacimiento = new ArrayList<Tenista> ();
@@ -73,6 +76,8 @@ public class Equipo
 
     /**
      * Método 08.
+     * Salen los tenistas ordenados por peso, con la condición de que sean
+     * diestros.
      */
     public String getTenistasPorPeso(){
         ArrayList<Tenista> tenistaConPeso = new ArrayList<Tenista> ();

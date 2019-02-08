@@ -27,63 +27,64 @@ public class Tenista
     }
 
     /**
-     * 
+     * Devuelve el nombre del tenista.
      */
     public String getNombre(){
         return nombre;
     }
 
     /**
-     * 
+     * Cambia el nombre del tenista.
      */
     public void setNombre(String nuevoNombre){
         nombre = nuevoNombre;
     }
 
     /**
-     * 
+     * Devuelve el año de nacimiento del tenista.
      */
     public int getAnoNacimiento(){
         return anoNacimiento;
     }
 
     /**
-     * 
+     * Cambia el año de nacimiento del tenista.
      */
     public void setAnoNacimiento(int nuevoAnoNacimiento){
         anoNacimiento = nuevoAnoNacimiento;
     }
 
     /**
-     * 
+     * Devuelve si es diestro el tenista.
      */
     public boolean diestro(){
         return diestro;
     }
 
     /**
-     * 
+     * Cambia a no diestro el tenista.
      */
     public void esDiestro(){
         diestro = false;
     }
 
     /**
-     * 
+     * Devuelve el peso del tenista.
      */
     public double getPeso(){
         return peso;
     }
 
     /**
-     * 
+     * Cambia el peso del tenista.
      */
     public void setPeso(double nuevoPeso){
         peso = nuevoPeso;
     }
 
     /**
-     * 
+     * Devuelve los datos del tenista, cuando es diestro aparece diestro y
+     * cuando no es diestro aparece zurdo.
      */
     public String getDatosTenista(){
         String aDevolver = "" + nombre + ", " + anoNacimiento + ", ";

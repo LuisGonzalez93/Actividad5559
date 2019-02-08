@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 /**
  * Write a description of class Equipo here.
  *
@@ -117,6 +118,20 @@ public class Equipo
     public void setPesoActual(int numeroLicencia, double peso){
         if(numeroLicencia > 0 && numeroLicencia <= tenistas.size()){
             tenistas.get(numeroLicencia -1).setPeso(peso);
+        }
+    }
+    
+    /**
+     * Método 10.
+     * Elimina un tenista cuando su año de nacimiento es menor a 1981.
+     */
+    public void eliminaTenista(){
+        Iterator <Tenista> it=tenistas.iterator();
+        while(it.hasNext()){
+            Tenista tenistaAEliminar = it.next();
+            if(tenistaAEliminar.getAnoNacimiento() > 0 && tenistaAEliminar.getAnoNacimiento() < 1981){
+                it.remove();
+            }
         }
     }
 }

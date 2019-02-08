@@ -81,6 +81,13 @@ public class Tenista
     public void setPeso(double nuevoPeso){
         peso = nuevoPeso;
     }
+    
+    /**
+     * Devuelve el numero de licencia
+     */
+    public int getId(){
+        return numeroLicencia;
+    }
 
     /**
      * Devuelve los datos del tenista, cuando es diestro aparece diestro y

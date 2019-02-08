@@ -110,17 +110,23 @@ public class Equipo
         }
         return textoADevolver;
     }
-    
+
     /**
      * Método 09.
      * Modifica el peso indicando su número de licencia.
      */
     public void setPesoActual(int numeroLicencia, double peso){
-        if(numeroLicencia > 0 && numeroLicencia <= tenistas.size()){
-            tenistas.get(numeroLicencia -1).setPeso(peso);
+        int contador = 0;
+        boolean buscando = true;
+        while(contador < tenistas.size() && buscando){
+            if(tenistas.get(contador).getId() == numeroLicencia){
+                tenistas.get(contador).setPeso(peso);
+                buscando = false;
+            }
+            contador ++;
         }
     }
-    
+
     /**
      * Método 10.
      * Elimina un tenista cuando su año de nacimiento es menor a 1981.

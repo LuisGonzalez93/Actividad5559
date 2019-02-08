@@ -77,7 +77,23 @@ public class EquipoTest
         equipo1.agregarTenista("Nole", 1985, true, 79.6);
         assertEquals("Roger, 1980, diestro, 79.2, 2\nNole, 1985, diestro, 79.6, 3\n", equipo1.getTenistasPorPeso());
     }
+
+    @Test
+    public void testModificarPeso()
+    {
+        Equipo equipo1 = new Equipo();
+        equipo1.setPesoActual(1, 79.6);
+        assertEquals("", equipo1.getDatosTenista());
+        equipo1.agregarTenista("Nole", 1985, true, 79.2);
+        equipo1.setPesoActual(1, 79.2);
+        equipo1.agregarTenista("Roger", 1980, true, 85.3);
+        equipo1.setPesoActual(2, 79.6);
+        equipo1.agregarTenista("Rafa", 1982, false, 79.2);
+        equipo1.setPesoActual(3, 85.3);
+        assertEquals("Nole, 1985, diestro, 79.2, 1\nRoger, 1980, diestro, 79.6, 2\nRafa, 1982, zurdo, 85.3, 3\n", equipo1.getDatosTenista());
+    }
 }
+
 
 
 

@@ -109,4 +109,14 @@ public class Equipo
         }
         return textoADevolver;
     }
+    
+    /**
+     * Método 09.
+     * Modifica el peso indicando su número de licencia.
+     */
+    public void setPesoActual(int numeroLicencia, double peso){
+        if(numeroLicencia > 0 && numeroLicencia <= tenistas.size()){
+            tenistas.get(numeroLicencia -1).setPeso(peso);
+        }
+    }
 }

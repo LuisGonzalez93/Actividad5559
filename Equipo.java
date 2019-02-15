@@ -46,27 +46,23 @@ public class Equipo
      * Método 07.
      * Salen ordenados los tenistas por su año de nacimiento.
      */
-    public String getTenistasPorAnoNacimiento() {
+    public String getTenistasPorAnoNacimiento(){
         ArrayList<Tenista> tenistaConAnoNacimiento = new ArrayList<Tenista> ();
         String textoADevolver = "";
         for(Tenista tenistaActual : tenistas) {
             tenistaConAnoNacimiento.add(tenistaActual);
         }
-        int posicionAMirar = 0;
+        int posicionAMirar = 1;
         while(posicionAMirar < tenistaConAnoNacimiento.size()) {
-            int posicionMenor = posicionAMirar;
-            int posicionPosibleMenor = posicionAMirar;
-            int valorMaximoDeAno = 9999;
-            while(posicionPosibleMenor < tenistaConAnoNacimiento.size()) {
-                if (tenistaConAnoNacimiento.get(posicionPosibleMenor).getAnoNacimiento() < valorMaximoDeAno) {
-                    posicionMenor = posicionPosibleMenor;
-                    valorMaximoDeAno = tenistaConAnoNacimiento.get(posicionPosibleMenor).getAnoNacimiento();
+            int posicionMenor = 0;
+            while(posicionMenor < posicionAMirar) {
+                if (tenistaConAnoNacimiento.get(posicionMenor).getAnoNacimiento() > tenistaConAnoNacimiento.get(posicionAMirar).getAnoNacimiento()) {
+                    Tenista tenistaTemporal = tenistaConAnoNacimiento.get(posicionAMirar);
+                    tenistaConAnoNacimiento.remove(posicionAMirar);
+                    tenistaConAnoNacimiento.add(posicionMenor, tenistaTemporal);
                 }
-                posicionPosibleMenor ++;
+                posicionMenor ++;
             }
-            Tenista tenistaTemporal = tenistaConAnoNacimiento.get(posicionAMirar);
-            tenistaConAnoNacimiento.set(posicionAMirar, tenistaConAnoNacimiento.get(posicionMenor));
-            tenistaConAnoNacimiento.set(posicionMenor, tenistaTemporal);
             posicionAMirar ++;
         }
         for(Tenista tenistaTemporal : tenistaConAnoNacimiento){

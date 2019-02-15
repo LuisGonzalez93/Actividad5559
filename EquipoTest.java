@@ -1,5 +1,4 @@
 
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -61,10 +60,17 @@ public class EquipoTest
     {
         Equipo equipo1 = new Equipo();
         assertEquals("", equipo1.getTenistasPorAnoNacimiento());
+
+        equipo1.agregarTenista("Pepe", 2010, false, 82.5);
+        equipo1.agregarTenista("Nole", 1990, true, 79);
         equipo1.agregarTenista("Roger", 1980, true, 79.2);
         equipo1.agregarTenista("Rafa", 1982, false, 82.5);
-        equipo1.agregarTenista("Nole", 1985, true, 79);
-        assertEquals("Roger, 1980, diestro, 79.2, 1\nRafa, 1982, zurdo, 82.5, 2\nNole, 1985, diestro, 79.0, 3\n", equipo1.getTenistasPorAnoNacimiento());
+        equipo1.agregarTenista("Miguel", 2000, false, 82.5);
+        equipo1.agregarTenista("Izan", 1985, true, 79);
+        equipo1.agregarTenista("Alejandro", 1983, true, 79.2);
+        equipo1.agregarTenista("Francisco", 1995, false, 82.5);
+
+        assertEquals("Roger, 1980, diestro, 79.2, 3\nRafa, 1982, zurdo, 82.5, 4\nAlejandro, 1983, diestro, 79.2, 7\nIzan, 1985, diestro, 79.0, 6\nNole, 1990, diestro, 79.0, 2\nFrancisco, 1995, zurdo, 82.5, 8\nMiguel, 2000, zurdo, 82.5, 5\nPepe, 2010, zurdo, 82.5, 1\n", equipo1.getTenistasPorAnoNacimiento());
     }
 
     @Test
@@ -106,9 +112,5 @@ public class EquipoTest
         assertEquals("Nole, 1985, diestro, 79.2, 1\nRafa, 1982, zurdo, 85.3, 3\n", equipo1.getDatosTenista());
     }
 }
-
-
-
-
 
 
